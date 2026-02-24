@@ -23,11 +23,11 @@ module.exports = grammar(C, {
     (e) => !(e.length == 2 && e[0].name == 'type_qualifier' && e[1].name == 'extension_expression'),
   ).concat([
     [$.enum_specifier],
-    [$.expression, $.generic_specifier],
-    [$._declarator, $.type_specifier, $.generic_specifier],
+    // MULLE_DISABLED: generics [$.expression, $.generic_specifier],
+    // MULLE_DISABLED: generics [$._declarator, $.type_specifier, $.generic_specifier],
     [$._declarator, $.type_specifier, $.sized_type_specifier],
     [$.attribute, $.expression],
-    [$.parameterized_arguments],
+    // MULLE_DISABLED: generics [$.parameterized_arguments],
     [$.string_literal],
     [$.extension_expression, $.range_expression],
     [$.abstract_array_declarator, $.array_type_specifier],
@@ -170,7 +170,7 @@ module.exports = grammar(C, {
       $.selector_expression,
       $.available_expression,
       $.range_expression,
-      $.block_literal,
+      // MULLE_DISABLED: blocks $.block_literal,
       $.dictionary_literal,
       $.array_literal,
       $.at_expression,
@@ -182,7 +182,7 @@ module.exports = grammar(C, {
     cast_expression: $ => prec(C.PREC.CAST, choice(
       seq(
         '(',
-        field('type', choice($.type_descriptor, $.typeof_specifier, $.parameterized_arguments)),
+        field('type', choice($.type_descriptor, $.typeof_specifier /*, MULLE_DISABLED: generics $.parameterized_arguments */)),
         ')',
         field('value', $.expression),
       ),
@@ -255,17 +255,17 @@ module.exports = grammar(C, {
 
     _declarator: ($, original) => prec.right(choice(
       ...original.members.filter(member => member.name !== 'attributed_declarator'),
-      $.block_pointer_declarator,
+      // MULLE_DISABLED: blocks $.block_pointer_declarator,
     )),
 
     _abstract_declarator: ($, original) => choice(
       original,
-      $.abstract_block_pointer_declarator,
+      // MULLE_DISABLED: blocks $.abstract_block_pointer_declarator,
     ),
 
     _field_declarator: ($, original) => choice(
       original,
-      alias($.block_pointer_field_declarator, $.block_pointer_declarator),
+      // MULLE_DISABLED: blocks alias($.block_pointer_field_declarator, $.block_pointer_declarator),
     ),
 
     _type_declarator: $ => choice(
@@ -273,7 +273,7 @@ module.exports = grammar(C, {
       alias($.function_type_declarator, $.function_declarator),
       alias($.array_type_declarator, $.array_declarator),
       alias($.parenthesized_type_declarator, $.parenthesized_declarator),
-      alias($.block_pointer_type_declarator, $.block_pointer_declarator),
+      // MULLE_DISABLED: blocks alias($.block_pointer_type_declarator, $.block_pointer_declarator),
       $._type_identifier,
       alias(choice('signed', 'unsigned', 'long', 'short'), $.primitive_type),
       $.primitive_type,
@@ -514,15 +514,15 @@ module.exports = grammar(C, {
     class_declaration: $ => seq(
       '@',
       'class',
-      commaSep1(seq($.identifier, optional($.parameterized_arguments))),
+      commaSep1(seq($.identifier /*, MULLE_DISABLED: generics optional($.parameterized_arguments) */)),
       ';',
     ),
 
     class_interface: $ => seq(
       $._class_interface_header,
-      optional($._type_params),
+      // MULLE_DISABLED: generics optional($._type_params),
       optional($._class_interface_inheritance),
-      optional($.parameterized_arguments),
+      // MULLE_DISABLED: generics optional($.parameterized_arguments),
       optional($.instance_variables),
       repeat($.interface_declaration),
       '@end',
@@ -535,19 +535,20 @@ module.exports = grammar(C, {
       optional(';'),
     ),
 
-    _type_params: $ => prec.right(choice(
-      seq($.generic_arguments, optional($.parameterized_arguments)),
-      $.parameterized_arguments,
-    )),
+    // MULLE_DISABLED: generics
+    // _type_params: $ => prec.right(choice(
+    //   seq($.generic_arguments, optional($.parameterized_arguments)),
+    //   $.parameterized_arguments,
+    // )),
 
     _class_interface_inheritance: $ => prec.right(1, choice(
-      seq(':', field('superclass', $.identifier), optional($.parameterized_arguments)),
+      seq(':', field('superclass', $.identifier) /*, MULLE_DISABLED: generics optional($.parameterized_arguments) */),
       seq('(', field('category', optional($.identifier)), ')'),
     )),
 
     class_implementation: $ => seq(
       $._class_implementation_header,
-      optional($._type_params),
+      // MULLE_DISABLED: generics optional($._type_params),
       optional($._class_implementation_inheritance),
       optional($.instance_variables),
       repeat($.implementation_definition),
@@ -568,20 +569,21 @@ module.exports = grammar(C, {
 
     protocol_reference_list: $ => seq('<', commaSep1($.identifier), '>'),
 
-    parameterized_arguments: $ => prec(-1, seq(
-      '<',
-      choice(
-        commaSep1(seq(
-          commaSep1(seq(optional(choice('__covariant', '__contravariant')), $._type_identifier)),
-          optional(seq(':', $.type_name)),
-        )),
-        // commaSep1($._type_identifier),
-        commaSep1($.type_name),
-      ),
-      '>',
-    )),
+    // MULLE_DISABLED: generics
+    // parameterized_arguments: $ => prec(-1, seq(
+    //   '<',
+    //   choice(
+    //     commaSep1(seq(
+    //       commaSep1(seq(optional(choice('__covariant', '__contravariant')), $._type_identifier)),
+    //       optional(seq(':', $.type_name)),
+    //     )),
+    //     commaSep1($.type_name),
+    //   ),
+    //   '>',
+    // )),
 
-    generic_arguments: $ => prec.right(seq('(', commaSep1($._type_identifier), ')')),
+    // MULLE_DISABLED: generics
+    // generic_arguments: $ => prec.right(seq('(', commaSep1($._type_identifier), ')')),
 
     instance_variables: $ => seq(
       '{',
@@ -717,7 +719,7 @@ module.exports = grammar(C, {
 
     method_type: $ => seq(
       '(',
-      commaSep1(seq(optional($.attribute_specifier), choice($.type_name, $.parameterized_arguments))),
+      commaSep1(seq(optional($.attribute_specifier), choice($.type_name /*, MULLE_DISABLED: generics $.parameterized_arguments */))),
       ')',
     ),
 
@@ -913,19 +915,20 @@ module.exports = grammar(C, {
 
     range_expression: $ => prec.right(seq($.expression, '...', $.expression)),
 
-    block_literal: $ => seq(
-      '^',
-      optional($.attribute_specifier),
-      optional($.type_name),
-      optional($.attribute_specifier),
-      optional($.parameter_list),
-      optional($.attribute_specifier),
-      $.compound_statement,
-    ),
+    // MULLE_DISABLED: blocks
+    // block_literal: $ => seq(
+    //   '^',
+    //   optional($.attribute_specifier),
+    //   optional($.type_name),
+    //   optional($.attribute_specifier),
+    //   optional($.parameter_list),
+    //   optional($.attribute_specifier),
+    //   $.compound_statement,
+    // ),
 
     message_expression: $ => prec(C.PREC.CALL, seq(
       '[',
-      field('receiver', choice($.expression, $.generic_specifier)),
+      field('receiver', choice($.expression /*, MULLE_DISABLED: generics $.generic_specifier */)),
       repeat1(seq(
         field('method', $.identifier),
         repeat(seq(
@@ -1006,26 +1009,27 @@ module.exports = grammar(C, {
       repeat($._declaration_modifiers),
       field('declarator', optional($._abstract_declarator)),
     ))),
-    block_pointer_declarator: $ => prec.dynamic(1, prec.right(seq(
-      '^',
-      repeat($.type_qualifier),
-      field('declarator', $._declarator),
-    ))),
-    block_pointer_field_declarator: $ => prec.dynamic(1, prec.right(seq(
-      '^',
-      repeat($.type_qualifier),
-      field('declarator', $._field_declarator),
-    ))),
-    block_pointer_type_declarator: $ => prec.dynamic(1, prec.right(seq(
-      '^',
-      repeat($.type_qualifier),
-      field('declarator', $._type_declarator),
-    ))),
-    abstract_block_pointer_declarator: $ => prec.dynamic(1, prec.right(seq(
-      '^',
-      repeat($.type_qualifier),
-      field('declarator', optional($._abstract_declarator)),
-    ))),
+    // MULLE_DISABLED: blocks
+    // block_pointer_declarator: $ => prec.dynamic(1, prec.right(seq(
+    //   '^',
+    //   repeat($.type_qualifier),
+    //   field('declarator', $._declarator),
+    // ))),
+    // block_pointer_field_declarator: $ => prec.dynamic(1, prec.right(seq(
+    //   '^',
+    //   repeat($.type_qualifier),
+    //   field('declarator', $._field_declarator),
+    // ))),
+    // block_pointer_type_declarator: $ => prec.dynamic(1, prec.right(seq(
+    //   '^',
+    //   repeat($.type_qualifier),
+    //   field('declarator', $._type_declarator),
+    // ))),
+    // abstract_block_pointer_declarator: $ => prec.dynamic(1, prec.right(seq(
+    //   '^',
+    //   repeat($.type_qualifier),
+    //   field('declarator', optional($._abstract_declarator)),
+    // ))),
 
     init_declarator: $ => seq(
       field('declarator', $._declarator),
@@ -1034,19 +1038,20 @@ module.exports = grammar(C, {
       field('value', choice($.initializer_list, $.expression)),
     ),
 
-    generic_specifier: $ => prec.right(seq(
-      $._type_identifier,
-      repeat1(seq(
-        '<',
-        commaSep1($.type_name),
-        '>',
-      )),
-    )),
+    // MULLE_DISABLED: generics
+    // generic_specifier: $ => prec.right(seq(
+    //   $._type_identifier,
+    //   repeat1(seq(
+    //     '<',
+    //     commaSep1($.type_name),
+    //     '>',
+    //   )),
+    // )),
 
     type_specifier: ($, original) => choice(
       original,
       $.typedefed_specifier,
-      $.generic_specifier,
+      // MULLE_DISABLED: generics $.generic_specifier,
       $.typeof_specifier,
       $.array_type_specifier,
     ),

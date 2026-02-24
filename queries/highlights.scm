@@ -18,8 +18,8 @@
 [
   "@optional"
   "@required"
-  "__covariant"
-  "__contravariant"
+  ; MULLE_DISABLED: generics "__covariant"
+  ; MULLE_DISABLED: generics "__contravariant"
   (visibility_specification)
 ] @type.qualifier
 
@@ -189,11 +189,12 @@
 
 (method_parameter declarator: (identifier) @parameter)
 
-(parameter_declaration 
-  declarator: (function_declarator 
-                declarator: (parenthesized_declarator 
-                              (block_pointer_declarator 
-                                declarator: (identifier) @parameter))))
+; MULLE_DISABLED: blocks
+; (parameter_declaration 
+;   declarator: (function_declarator 
+;                 declarator: (parenthesized_declarator 
+;                               (block_pointer_declarator 
+;                                 declarator: (identifier) @parameter))))
 
 "..." @parameter.builtin
 

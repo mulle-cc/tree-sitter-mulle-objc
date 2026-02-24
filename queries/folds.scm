@@ -13,7 +13,7 @@
   (catch_clause)
   (finally_clause)
   (throw_statement)
-  (block_literal)
+  ; MULLE_DISABLED: blocks (block_literal)
   (ms_asm_block)
   (dictionary_literal)
   (array_literal)
