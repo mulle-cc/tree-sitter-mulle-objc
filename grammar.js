@@ -606,7 +606,7 @@ module.exports = grammar(C, {
     visibility_specification: _ => choice(
       '@private',
       '@protected',
-      '@package',
+      // MULLE_DISABLED: '@package',
       '@public',
     ),
 

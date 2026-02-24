@@ -6667,10 +6667,6 @@
     "named": false
   },
   {
-    "type": "@package",
-    "named": false
-  },
-  {
     "type": "@private",
     "named": false
   },

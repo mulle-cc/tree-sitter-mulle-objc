@@ -13099,10 +13099,6 @@
         },
         {
           "type": "STRING",
-          "value": "@package"
-        },
-        {
-          "type": "STRING",
           "value": "@public"
         }
       ]
