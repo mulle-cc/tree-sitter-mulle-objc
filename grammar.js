@@ -1,5 +1,5 @@
 /**
- * @file Objective-C grammar for tree-sitter
+ * @file mulle-objc Objective-C grammar for tree-sitter
  * @author Nat! <nat-tree-sitter@mulle-kybernetik.com>
  * @author Amaan Qureshi <amaanq12@gmail.com>
  * @license MIT
@@ -183,7 +183,7 @@ module.exports = grammar(C, {
     cast_expression: $ => prec(C.PREC.CAST, choice(
       seq(
         '(',
-        field('type', choice($.type_descriptor, $.typeof_specifier /*, MULLE_DISABLED: generics $.parameterized_arguments */)),
+        field('type', choice($.type_descriptor, $.typeof_specifier /* , MULLE_DISABLED: generics $.parameterized_arguments */)),
         ')',
         field('value', $.expression),
       ),
@@ -515,7 +515,7 @@ module.exports = grammar(C, {
     class_declaration: $ => seq(
       '@',
       'class',
-      commaSep1(seq($.identifier /*, MULLE_DISABLED: generics optional($.parameterized_arguments) */)),
+      commaSep1(seq($.identifier /* , MULLE_DISABLED: generics optional($.parameterized_arguments) */)),
       ';',
     ),
 
@@ -543,7 +543,7 @@ module.exports = grammar(C, {
     // )),
 
     _class_interface_inheritance: $ => prec.right(1, choice(
-      seq(':', field('superclass', $.identifier) /*, MULLE_DISABLED: generics optional($.parameterized_arguments) */),
+      seq(':', field('superclass', $.identifier) /* , MULLE_DISABLED: generics optional($.parameterized_arguments) */),
       seq('(', field('category', optional($.identifier)), ')'),
     )),
 
@@ -720,7 +720,7 @@ module.exports = grammar(C, {
 
     method_type: $ => seq(
       '(',
-      commaSep1(seq(optional($.attribute_specifier), choice($.type_name /*, MULLE_DISABLED: generics $.parameterized_arguments */))),
+      commaSep1(seq(optional($.attribute_specifier), choice($.type_name /* , MULLE_DISABLED: generics $.parameterized_arguments */))),
       ')',
     ),
 
@@ -929,7 +929,7 @@ module.exports = grammar(C, {
 
     message_expression: $ => prec(C.PREC.CALL, seq(
       '[',
-      field('receiver', choice($.expression /*, MULLE_DISABLED: generics $.generic_specifier */)),
+      field('receiver', choice($.expression /* , MULLE_DISABLED: generics $.generic_specifier */)),
       repeat1(seq(
         field('method', $.identifier),
         repeat(seq(

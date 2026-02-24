@@ -1,16 +1,21 @@
 # Rust artifacts
 target/
+Cargo.lock
 
 # Node artifacts
 build/
 prebuilds/
 node_modules/
+# github ci needs it
+# package-lock.json
 
 # Swift artifacts
 .build/
+Package.resolved
 
 # Go artifacts
 _obj/
+go.sum
 
 # Python artifacts
 .venv/
