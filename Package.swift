@@ -18,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TreeSitterObjc",
+            name: "TreeSitterMulleObjc",
             dependencies: [],
             path: ".",
             sources: sources,

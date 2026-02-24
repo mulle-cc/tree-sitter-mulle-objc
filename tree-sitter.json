@@ -19,17 +19,17 @@
     }
   ],
   "metadata": {
-    "version": "3.0.2",
+    "version": "0.0.1",
     "license": "MIT",
     "description": "Mulle-ObjC grammar for tree-sitter (based on tree-sitter-objc)",
     "authors": [
       {
-        "name": "Amaan Qureshi",
-        "email": "amaanq12@gmail.com"
+        "name": "Nat!",
+        "email": "nat-tree-sitter@mulle-kybernetik.com"
       }
     ],
     "links": {
-      "repository": "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc"
+      "repository": "https://github.com/mulle-cc/tree-sitter-mulle-objc"
     }
   },
   "bindings": {

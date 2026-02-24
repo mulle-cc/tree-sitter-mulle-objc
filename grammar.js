@@ -1,5 +1,6 @@
 /**
  * @file Objective-C grammar for tree-sitter
+ * @author Nat! <nat-tree-sitter@mulle-kybernetik.com>
  * @author Amaan Qureshi <amaanq12@gmail.com>
  * @license MIT
  */

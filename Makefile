@@ -3,8 +3,8 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-mulle-objc
-HOMEPAGE_URL := https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc
-VERSION := 3.0.2
+HOMEPAGE_URL := https://github.com/mulle-cc/tree-sitter-mulle-objc
+VERSION := 0.0.1
 
 # repository
 SRC_DIR := src

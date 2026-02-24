@@ -1,12 +1,12 @@
 {
   "name": "tree-sitter-mulle-objc",
-  "version": "3.0.2",
-  "description": "Objective-C grammar for tree-sitter",
-  "repository": "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc",
+  "version": "0.0.1",
+  "description": "mulle-objc Objective-C grammar for tree-sitter",
+  "repository": "https://github.com/mulle-cc/tree-sitter-mulle-objc",
   "license": "MIT",
   "author": {
-    "name": "Amaan Qureshi",
-    "email": "amaanq12@gmail.com"
+    "name": "Nat!",
+    "email": "nat-tree-sitter@mulle-kybernetik.com"
   },
   "main": "bindings/node",
   "types": "bindings/node",

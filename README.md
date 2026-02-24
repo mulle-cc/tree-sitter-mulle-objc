@@ -1,15 +1,14 @@
 # tree-sitter-mulle-objc
 
-
 [![CI][ci]](https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc/actions/workflows/ci.yml)
-[![discord][discord]](https://discord.gg/w7nTvsVJhm)
+[![discord][discord]](https://discord.gg/5PAnRR28aM)
 [![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
 [![crates][crates]](https://crates.io/crates/tree-sitter-mulle-objc)
 [![npm][npm]](https://www.npmjs.com/package/tree-sitter-mulle-objc)
 [![pypi][pypi]](https://pypi.org/project/tree-sitter-mulle-objc)
 
 
-[Objective C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+[mulle-objc Objective C](https://www.mulle-kybernetik.com/de-re-mulle-objc/)
 grammar for [tree-sitter](https://tree-sitter.github.io)
 
 [ci]: https://img.shields.io/github/actions/workflow/status/tree-sitter-grammars/tree-sitter-mulle-objc/ci.yml?logo=github&label=CI

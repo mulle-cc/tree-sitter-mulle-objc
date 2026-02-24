@@ -4,22 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-mulle-objc"
-description = "Objective-C grammar for tree-sitter"
-version = "3.0.2"
-keywords = ["incremental", "parsing", "tree-sitter", "objc"]
+description = "mulle-objc Objective-C grammar for tree-sitter"
+version = "0.0.1"
+keywords = ["incremental", "parsing", "tree-sitter", "objc", "mulle-objc"]
 classifiers = [
   "Intended Audience :: Developers",
   "Topic :: Software Development :: Compilers",
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed",
 ]
-authors = [{ name = "Amaan Qureshi", email = "amaanq12@gmail.com" }]
+authors = [{ name = "Nat!", email = "nat-tree-sitter@mulle-kybernetik.com" }]
 requires-python = ">=3.9"
 license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc"
+Homepage = "https://github.com/mulle-cc/tree-sitter-mulle-objc"
 
 [project.optional-dependencies]
 core = ["tree-sitter~=0.22"]
