@@ -55,6 +55,9 @@ module.exports = grammar(C, {
       $.class_implementation,
       $.protocol_declaration,
       $.protocol_forward_declaration,
+      $.protocolclass_forward_declaration,
+      $.protocolclass_declaration,
+      $.protocolimplementation_definition,
       $.module_import,
       $.compatibility_alias_declaration,
       $.preproc_undef,
@@ -68,6 +71,9 @@ module.exports = grammar(C, {
       $.class_implementation,
       $.protocol_declaration,
       $.protocol_forward_declaration,
+      $.protocolclass_forward_declaration,
+      $.protocolclass_declaration,
+      $.protocolimplementation_definition,
       $.module_import,
       $.compatibility_alias_declaration,
       $.preproc_undef,
@@ -609,6 +615,28 @@ module.exports = grammar(C, {
       optional($.protocol_reference_list),
       repeat($.interface_declaration),
       repeat($.qualified_protocol_interface_declaration),
+      '@end',
+    ),
+
+    protocolclass_forward_declaration: $ => seq(
+      '@protocolclass',
+      commaSep1($.identifier),
+      ';',
+    ),
+
+    protocolclass_declaration: $ => seq(
+      '@protocolclass',
+      $.identifier,
+      optional($.protocol_reference_list),
+      repeat($.interface_declaration),
+      repeat($.qualified_protocol_interface_declaration),
+      '@end',
+    ),
+
+    protocolimplementation_definition: $ => seq(
+      '@protocolimplementation',
+      $.identifier,
+      repeat($.implementation_definition),
       '@end',
     ),
 

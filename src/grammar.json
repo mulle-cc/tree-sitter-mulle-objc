@@ -102,6 +102,18 @@
         },
         {
           "type": "SYMBOL",
+          "name": "protocolclass_forward_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "protocolclass_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "protocolimplementation_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "module_import"
         },
         {
@@ -206,6 +218,18 @@
         {
           "type": "SYMBOL",
           "name": "protocol_forward_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "protocolclass_forward_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "protocolclass_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "protocolimplementation_definition"
         },
         {
           "type": "SYMBOL",
@@ -13581,6 +13605,111 @@
           "content": {
             "type": "SYMBOL",
             "name": "qualified_protocol_interface_declaration"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "@end"
+        }
+      ]
+    },
+    "protocolclass_forward_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "@protocolclass"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "identifier"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "protocolclass_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "@protocolclass"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "protocol_reference_list"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "interface_declaration"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "qualified_protocol_interface_declaration"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "@end"
+        }
+      ]
+    },
+    "protocolimplementation_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "@protocolimplementation"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "implementation_definition"
           }
         },
         {

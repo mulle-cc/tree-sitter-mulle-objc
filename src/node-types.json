@@ -1871,6 +1871,18 @@
           "named": true
         },
         {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         },
@@ -2095,6 +2107,18 @@
         },
         {
           "type": "protocol_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
           "named": true
         },
         {
@@ -4433,6 +4457,18 @@
           "named": true
         },
         {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         },
@@ -4573,6 +4609,18 @@
           "named": true
         },
         {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         },
@@ -4697,6 +4745,18 @@
         },
         {
           "type": "protocol_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
           "named": true
         },
         {
@@ -4920,6 +4980,18 @@
           "named": true
         },
         {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         },
@@ -5061,6 +5133,18 @@
         },
         {
           "type": "protocol_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
           "named": true
         },
         {
@@ -5434,6 +5518,107 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "protocolclass_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "method_declaration",
+          "named": true
+        },
+        {
+          "type": "preproc_call",
+          "named": true
+        },
+        {
+          "type": "preproc_def",
+          "named": true
+        },
+        {
+          "type": "preproc_if",
+          "named": true
+        },
+        {
+          "type": "preproc_ifdef",
+          "named": true
+        },
+        {
+          "type": "preproc_undef",
+          "named": true
+        },
+        {
+          "type": "property_declaration",
+          "named": true
+        },
+        {
+          "type": "protocol_reference_list",
+          "named": true
+        },
+        {
+          "type": "qualified_protocol_interface_declaration",
+          "named": true
+        },
+        {
+          "type": "struct_specifier",
+          "named": true
+        },
+        {
+          "type": "type_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "protocolclass_forward_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "protocolimplementation_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "implementation_definition",
           "named": true
         }
       ]
@@ -5975,6 +6160,18 @@
         },
         {
           "type": "protocol_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolclass_forward_declaration",
+          "named": true
+        },
+        {
+          "type": "protocolimplementation_definition",
           "named": true
         },
         {
@@ -6683,6 +6880,14 @@
   },
   {
     "type": "@protocol",
+    "named": false
+  },
+  {
+    "type": "@protocolclass",
+    "named": false
+  },
+  {
+    "type": "@protocolimplementation",
     "named": false
   },
   {
