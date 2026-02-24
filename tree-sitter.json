@@ -2,25 +2,26 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
-      "name": "objc",
-      "camelcase": "Objc",
-      "scope": "source.objc",
+      "name": "mulle-objc",
+      "camelcase": "MulleObjc",
+      "scope": "source.mulle-objc",
       "path": ".",
       "file-types": [
         "h",
         "m",
+        "aam",
         "objc"
       ],
       "highlights": "queries/highlights.scm",
       "injections": "queries/injections.scm",
       "locals": "queries/locals.scm",
-      "injection-regex": "^(objc|objectivec)$"
+      "injection-regex": "^(mulle-objc|objc|objectivec)$"
     }
   ],
   "metadata": {
     "version": "3.0.2",
     "license": "MIT",
-    "description": "Objective-C grammar for tree-sitter",
+    "description": "Mulle-ObjC grammar for tree-sitter (based on tree-sitter-objc)",
     "authors": [
       {
         "name": "Amaan Qureshi",
