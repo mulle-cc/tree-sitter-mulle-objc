@@ -1,4 +1,4 @@
-module github.com/tree-sitter-grammars/tree-sitter-objc
+module github.com/mulle-cc/tree-sitter-mulle-objc
 
 go 1.22
 

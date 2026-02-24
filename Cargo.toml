@@ -1,5 +1,5 @@
 [package]
-name = "tree-sitter-objc"
+name = "tree-sitter-mulle-objc"
 description = "Objective-C grammar for tree-sitter"
 version = "3.0.2"
 authors = ["Amaan Qureshi <amaanq12@gmail.com>"]
@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "objc"]
 categories = ["parser-implementations", "parsing", "text-editors"]
-repository = "https://github.com/tree-sitter-grammars/tree-sitter-objc"
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc"
 edition = "2021"
 autoexamples = false
 

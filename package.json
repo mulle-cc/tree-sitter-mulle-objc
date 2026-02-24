@@ -1,8 +1,8 @@
 {
-  "name": "tree-sitter-objc",
+  "name": "tree-sitter-mulle-objc",
   "version": "3.0.2",
   "description": "Objective-C grammar for tree-sitter",
-  "repository": "https://github.com/tree-sitter-grammars/tree-sitter-objc",
+  "repository": "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc",
   "license": "MIT",
   "author": {
     "name": "Amaan Qureshi",

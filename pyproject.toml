@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tree-sitter-objc"
+name = "tree-sitter-mulle-objc"
 description = "Objective-C grammar for tree-sitter"
 version = "3.0.2"
 keywords = ["incremental", "parsing", "tree-sitter", "objc"]
@@ -19,7 +19,7 @@ license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://github.com/tree-sitter-grammars/tree-sitter-objc"
+Homepage = "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc"
 
 [project.optional-dependencies]
 core = ["tree-sitter~=0.22"]

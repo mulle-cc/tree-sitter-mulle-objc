@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(tree-sitter-objc
+project(tree-sitter-mulle-objc
         VERSION "3.0.2"
         DESCRIPTION "Objective-C grammar for tree-sitter"
-        HOMEPAGE_URL "https://github.com/tree-sitter-grammars/tree-sitter-objc"
+        HOMEPAGE_URL "https://github.com/tree-sitter-grammars/tree-sitter-mulle-objc"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
@@ -24,33 +24,33 @@ add_custom_command(OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/src/parser.c"
                    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
                    COMMENT "Generating parser.c")
 
-add_library(tree-sitter-objc src/parser.c)
+add_library(tree-sitter-mulle-objc src/parser.c)
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/scanner.c)
-  target_sources(tree-sitter-objc PRIVATE src/scanner.c)
+  target_sources(tree-sitter-mulle-objc PRIVATE src/scanner.c)
 endif()
-target_include_directories(tree-sitter-objc PRIVATE src)
+target_include_directories(tree-sitter-mulle-objc PRIVATE src)
 
-target_compile_definitions(tree-sitter-objc PRIVATE
+target_compile_definitions(tree-sitter-mulle-objc PRIVATE
                            $<$<BOOL:${TREE_SITTER_REUSE_ALLOCATOR}>:TREE_SITTER_REUSE_ALLOCATOR>
                            $<$<CONFIG:Debug>:TREE_SITTER_DEBUG>)
 
-set_target_properties(tree-sitter-objc
+set_target_properties(tree-sitter-mulle-objc
                       PROPERTIES
                       C_STANDARD 11
                       POSITION_INDEPENDENT_CODE ON
                       SOVERSION "${TREE_SITTER_ABI_VERSION}.${PROJECT_VERSION_MAJOR}"
                       DEFINE_SYMBOL "")
 
-configure_file(bindings/c/tree-sitter-objc.pc.in
-               "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-objc.pc" @ONLY)
+configure_file(bindings/c/tree-sitter-mulle-objc.pc.in
+               "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-mulle-objc.pc" @ONLY)
 
 include(GNUInstallDirs)
 
-install(FILES bindings/c/tree-sitter-objc.h
+install(FILES bindings/c/tree-sitter-mulle-objc.h
         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/tree_sitter")
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-objc.pc"
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-mulle-objc.pc"
         DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig")
-install(TARGETS tree-sitter-objc
+install(TARGETS tree-sitter-mulle-objc
         LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
 
 file(GLOB QUERIES queries/*.scm)
