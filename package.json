@@ -1,11 +1,8 @@
 {
   "name": "tree-sitter-mulle-objc",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "mulle-objc Objective-C grammar for tree-sitter",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mulle-cc/tree-sitter-mulle-objc.git"
-  },
+  "repository": "https://github.com/mulle-cc/tree-sitter-mulle-objc",
   "license": "MIT",
   "author": {
     "name": "Nat!",
